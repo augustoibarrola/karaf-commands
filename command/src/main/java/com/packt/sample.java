@@ -1,13 +1,15 @@
 
 package com.packt;
 
-import org.apache.karaf.shell.console.OsgiCommandSupport;
-import org.apache.karaf.shell.commands.Command;
-import org.apache.karaf.shell.commands.Option;
-import org.apache.karaf.shell.commands.Argument;
+import org.apache.karaf.shell.api.action.Action;
+import org.apache.karaf.shell.api.action.Argument;
+import org.apache.karaf.shell.api.action.Command;
+import org.apache.karaf.shell.api.action.Option;
+import org.apache.karaf.shell.api.action.lifecycle.Service;
 
 @Command(scope = "cookbook", name = "sample", description = "bleh ")
-public class sample extends OsgiCommandSupport {
+@Service
+public class sample implements Action {
 
     @Option(name = "-o", aliases = { "--option" }, description = "An option to the command", required = false, multiValued = false)
     private String option;
@@ -15,7 +17,8 @@ public class sample extends OsgiCommandSupport {
     @Argument(name = "argument", description = "Argument to the command", required = false, multiValued = false)
     private String argument;
 
-    protected Object doExecute() throws Exception {
+    @Override
+    public Object execute() throws Exception {
          System.out.println("Executing command sample");
          System.out.println("Option: " + option);
          System.out.println("Argument: " + argument);

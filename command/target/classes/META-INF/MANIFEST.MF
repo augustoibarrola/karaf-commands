@@ -1,18 +1,16 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1652219975664
-Build-Jdk: 18
-Built-By: augustoibarrola
-Bundle-Blueprint: OSGI-INF/blueprint/shell-log.xml
+Bnd-LastModified: 1652220186300
+Build-Jdk-Spec: 18
 Bundle-Description: Provides the OSGi cookbook commands
 Bundle-ManifestVersion: 2
 Bundle-Name: Apache Karaf :: Shell cookbook/sample Commands
 Bundle-SymbolicName: command
 Bundle-Version: 1.0.0.SNAPSHOT
-Created-By: Apache Maven Bundle Plugin
-Import-Package: org.osgi.service.blueprint;version="[1.0.0,2.0.0)",org.a
- pache.felix.service.command;version="[0.10,1)";status=provisional,org.a
- pache.aries.blueprint,org.apache.karaf.shell.commands;version="[3.0,4)"
- ,org.apache.karaf.shell.console;version="[3.0,4)",org.osgi.service.blue
- print.container;version="[1.0,2)",org.osgi.service.blueprint.reflect;ve
- rsion="[1.0,2)"
-Tool: Bnd-2.1.0.20130426-122213
+Created-By: Apache Maven Bundle Plugin 5.1.4
+Export-Package: com.packt;version="1.0.0.SNAPSHOT";uses:="org.apache.kar
+ af.shell.api.action,org.apache.karaf.shell.api.action.lifecycle"
+Import-Package: org.apache.karaf.shell.api.action;version="[4.3,5)",org.
+ apache.karaf.shell.api.action.lifecycle;version="[4.3,5)"
+Karaf-Commands: com.packt*
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-5.1.1.202006162103
